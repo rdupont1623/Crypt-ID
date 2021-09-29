@@ -15,8 +15,8 @@ Post.init(
     report: {
       type: DataTypes.STRING,
     },
-    coordinates: {
-      type: DataTypes.GEOMETRY,
+    location: {
+      type: DataTypes.STRING,
     },
     timeSeen: {
       type: DataTypes.DATE,
@@ -25,6 +25,9 @@ Post.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    category_id:  {
+      type: DataTypes.INTEGER,
     },
     user_id: {
       type: DataTypes.INTEGER,
