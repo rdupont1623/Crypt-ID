@@ -11,10 +11,6 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     report: {
       type: DataTypes.STRING,
     },
@@ -32,15 +28,21 @@ Post.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'username',
         key: 'id',
       },
+    },
+    tag_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'tag',
+        key: 'id'
+      }
     },
   },
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
     underscored: true,
     modelName: 'post',
   }
