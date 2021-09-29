@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+// TODO: change this to user/post route information
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -27,7 +30,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
       include: [
