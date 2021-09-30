@@ -7,18 +7,18 @@ router.get('/', async (req, res) => {
   try {
     console.log("homepage")
     // Get all post and JOIN with user data
-    const Post = await Post.findAll({
+    const postData = await Post.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
     
     // Serialize data so the template can read it
+    // return res.send('random')
     const posts = postData.map((post) => post.get({ plain: true }));
-    return res.send('random')
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -32,16 +32,16 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const Post = await Post.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
 
-    const post = post.get({ plain: true });
+    const post = postData.get({ plain: true });
 
     res.render('Post', {
       ...project,
