@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { Category, Post } = require('../../models');
-// why isn't Category being imported as a class?
-
 
 // The `/api/categories` endpoint
 
