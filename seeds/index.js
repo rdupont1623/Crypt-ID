@@ -1,5 +1,10 @@
+const seedUser = require('./user-seeds');
+const seedCategories = require('./category-seeds');
+const seedPosts = require('./post-seeds');
+const seedTags = require('./tag-seeds');
+const seedPostTags = require('./post-tag-seeds');
+
 const sequelize = require('../config/connection');
-const { User, Post, Tag, Category, PostTag } = require('../models');
 
 const userData = require('./user-seeds');
 const categoryData = require('./category-seeds');
