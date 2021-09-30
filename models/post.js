@@ -32,14 +32,14 @@ Post.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'username',
+        model: 'users',
         key: 'id',
       },
     },
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'tag',
+        model: 'tags',
         key: 'id'
       }
     },

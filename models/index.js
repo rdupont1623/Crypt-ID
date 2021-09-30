@@ -14,7 +14,7 @@ Category.hasMany(Post, {
 })
 
 Post.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'post_id'
 });
 
 Post.belongsToMany(Tag, {
