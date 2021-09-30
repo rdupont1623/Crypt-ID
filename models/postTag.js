@@ -15,14 +15,14 @@ PostTag.init(
     post_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'post',
+            model: 'posts',
             key: 'id'
         }
     },
     tag_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'tag',
+            model: 'tags',
             key: 'id'
         }
         }
