@@ -1,4 +1,6 @@
-[
+const { Tag } = require('../models');
+
+const tagData = [
     {
         "tag_name": "screech"
     },
@@ -42,6 +44,8 @@
     {
         "tag_name": "ghost"
     }
-    
-    
-]
+];
+
+const seedTags = () => Tag.bulkCreate(tagData);
+
+module.exports = seedTags;

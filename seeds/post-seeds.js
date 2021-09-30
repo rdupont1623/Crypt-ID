@@ -1,4 +1,6 @@
-[
+const { Post } = require('../models');
+
+const postData = [
   {
     "username": "0",
     "report": "I found myself in the woods late at night last Thursday. I heard a weird noise that sounded like a mix between a cat and a whale. I'm pretty sure it was the mothman because now I have pinkeye...",
@@ -24,4 +26,9 @@
     "timeFiled":"2019-04-23 06:35:03",
     "tags":["golumn", "boston", "walkinhere"]
   }
-]
+];
+
+const seedPosts = () => Product.bulkCreate(postData);
+
+module.exports = seedPosts;
+
