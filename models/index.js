@@ -27,6 +27,7 @@ Tag.belongsToMany(Post, {
 
 module.exports = { 
   User, 
+  Category,
   Post,
   Tag,
   PostTag
