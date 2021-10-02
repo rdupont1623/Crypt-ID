@@ -39,14 +39,15 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-  // update a tag by its `id` value
-    Tag.update(
+  // update a post by its `id` value
+    Post.update(
         req.body,
         {where: { id: req.params.id } 
     })
-    .then((tag) => 
-    {res.status(200).json(tag)})
-    .catch((err) => res.status(500).json(err))
+    .then((post) => res.status(200).json(post))
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err.toString())})
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
