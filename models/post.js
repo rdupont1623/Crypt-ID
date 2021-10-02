@@ -1,3 +1,6 @@
+//used to be project
+
+
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
