@@ -16,11 +16,11 @@ const seedDatabase = async () => {
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await seedPosts();
-  console.log('\n----- PRODUCTS SEEDED -----\n');
-
   await seedTags();
   console.log('\n----- TAGS SEEDED -----\n');
+
+  await seedPosts();
+  console.log('\n----- PRODUCTS SEEDED -----\n');
 
   await seedPostTags();
   console.log('\n----- PRODUCT TAGS SEEDED -----\n');
