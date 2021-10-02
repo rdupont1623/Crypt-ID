@@ -42,10 +42,13 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category's name by its `id` value
-    Category.update({
-        where: { id: req.params.id }, 
+    Category.update(
+        req.body,
+        {where: { id: req.params.id } 
     })
-        .catch((err) => res.status(500).json(err))
+    .then((category) => 
+    {res.status(200).json(category)})
+    .catch((err) => res.status(500).json(err))
 });
 
 router.delete('/:id', async (req, res) => {
@@ -54,9 +57,11 @@ router.delete('/:id', async (req, res) => {
         const category = await Category.destroy({
         where: {id: req.params.id}
         })
-
         if (!category) {
         res.status(404).json({ message: 'no category found with that id.'})
+        }
+        else    {
+            res.status(200).json(category)
         }
     }
     catch {
