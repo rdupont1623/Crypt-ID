@@ -1,25 +1,26 @@
 <div class="row">
   <div class="col-auto">
-    {{!-- <h2>Welcome, {{name}}!</h2> --}}
+    <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Report a sighting</h3>
+    <p>be sure to use our search feature to see if other have had a similar experience</p>
 
     <form class="form new-sighting-form">
       <div class="form-group">
-        <label for="sighting-name">Sighting Type</label>
+        <label for="sighting-name">Location of sighting</label>
         <input class="form-input" type="text" id="sighting-name" name="sighting-name" />
       </div>
       <div class="form-group">
-        <label for="sighting-desc">Description</label>
-        <textarea class="form-input" id="sighting-desc" name="sighting-desc"></textarea>
+        <label for="sighting-desc">Evidence</label>
+        <textarea class="form-input" id="sighting-evidence" name="sighting-evidence"></textarea>
       </div>
           <div class="form-group">
-        <label for="sighting-loc">Location</label>
-        <textarea class="form-input" id="sighting-loc" name="sighting-loc"></textarea>
+        <label for="sighting-loc">Description of cryptid</label>
+        <textarea class="form-input" id="sighting-desc" name="sighting-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Report</button>
@@ -29,15 +30,15 @@
 
   {{#if sighting.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Reports</h3>
+    <h3>Current Posts</h3>
 
     {{#each reports as |reports|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        {{!-- <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4> --}}
+        <h4><a href="/report/{{post.id}}">{{post.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

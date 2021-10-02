@@ -1,12 +1,12 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#post-name').value.trim();
+  const name = document.querySelector('#sighting-name').value.trim();
   const evidence = document.querySelector('#evidence').value.trim();
-  const description = document.querySelector('#post-desc').value.trim();
+  const description = document.querySelector('#sighting-desc').value.trim();
 
   if (name && evidence && description) {
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/post`, {
       method: 'POST',
       body: JSON.stringify({ name, evidence, description }),
       headers: {
@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create post');
+      alert('Failed to create report');
     }
   }
 };
@@ -26,22 +26,22 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/post/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete post');
+      alert('Failed to delete report');
     }
   }
 };
 
 document
-  .querySelector('.new-post-form')
+  .querySelector('.new-sighting-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.post-list')
+  .querySelector('.report-list')
   .addEventListener('click', delButtonHandler);
