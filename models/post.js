@@ -13,7 +13,7 @@ Post.init(
       autoIncrement: true,
     },
     report: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     location: {
       type: DataTypes.STRING,

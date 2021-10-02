@@ -22,10 +22,10 @@ const seedDatabase = async () => {
   console.log('\n----- TAGS SEEDED -----\n');
 
   await seedPosts();
-  console.log('\n----- PRODUCTS SEEDED -----\n');
+  console.log('\n----- POSTS SEEDED -----\n');
 
   await seedPostTags();
-  console.log('\n----- PRODUCT TAGS SEEDED -----\n');
+  console.log('\n----- POST TAGS SEEDED -----\n');
 
   process.exit(0);
 };
