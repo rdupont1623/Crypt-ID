@@ -16,7 +16,7 @@ Post.init(
       autoIncrement: true,
     },
     report: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     location: {
       type: DataTypes.STRING,
@@ -38,13 +38,6 @@ Post.init(
         model: 'users',
         key: 'id',
       },
-    },
-    tag_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'tags',
-        key: 'id'
-      }
     },
   },
   {
