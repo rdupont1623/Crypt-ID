@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { Category, Post } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/categories` endpoint
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   // find all categories
   // be sure to include the associated Post data
     try{
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   // find a single category by its `id`
     try {
         const category = await Category.findByPk(req.params.id, {
@@ -31,7 +32,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   // create a new category
     try {
         const newCategory = await Category.create(req.body)
@@ -40,23 +41,28 @@ router.post('/', async (req, res) => {
     catch (err) {res.status(500).json(err)}
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   // update a category's name by its `id` value
-    Category.update({
-        where: { id: req.params.id }, 
+    Category.update(
+        req.body,
+        {where: { id: req.params.id } 
     })
-        .catch((err) => res.status(500).json(err))
+    .then((category) => 
+    {res.status(200).json(category)})
+    .catch((err) => res.status(500).json(err))
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   // delete on category by its `id` value
     try {
         const category = await Category.destroy({
         where: {id: req.params.id}
         })
-
         if (!category) {
         res.status(404).json({ message: 'no category found with that id.'})
+        }
+        else    {
+            res.status(200).json(category)
         }
     }
     catch {

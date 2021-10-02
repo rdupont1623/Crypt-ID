@@ -1,15 +1,16 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
+const environment = process.env;
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+if (environment.JAWSDB_URL) {
+  sequelize = new Sequelize(environment.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
+    environment.DB_NAME,
+    environment.DB_USER,
+    environment.DB_PASSWORD,
     {
       host: 'localhost',
       dialect: 'mysql',
