@@ -13,9 +13,8 @@ router.get('/', withAuth, async (req, res) => {
         })
         res.json(categories)
     }
-    catch{ err => {
+    catch(err) {
         res.status(500).json(err)
-        }
     }
 });
 
