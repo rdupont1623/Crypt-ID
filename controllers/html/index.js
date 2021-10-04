@@ -5,7 +5,7 @@ const authRoutes = require('./authRoutes');
 const postRoutes = require('./postRoutes');
 
 router.use('/', homeRoutes);
-router.use('/auth', authRoutes);
+router.use('/login', authRoutes);
 router.use('/post', postRoutes);
 
 module.exports = router;
