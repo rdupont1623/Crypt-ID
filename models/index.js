@@ -9,9 +9,12 @@ User.hasMany(Post, {
   onDelete: 'CASCADE'
 });
 
-Category.hasMany(Post, {
-  foreignKey: 'category_id'
-})
+Category.hasMany(Post, { as: "posts" });
+
+Post.belongsTo(Category, {
+  foreignKey: 'category_id',
+  as: 'category'
+});
 
 Post.belongsTo(User, {
   foreignKey: 'user_id'
@@ -19,11 +22,11 @@ Post.belongsTo(User, {
 
 Post.belongsToMany(Tag, {
   through: PostTag
-})
+});
 
 Tag.belongsToMany(Post, {
   through: PostTag
-})
+});
 
 module.exports = { 
   User, 
