@@ -21,10 +21,10 @@ router.get('/cryptids', async (req, res) => {
     try {
         // find the associate category id
         const categoryId = await Category.findByPk({
-            where: {category_name = 'cryptids'}
+            where: {category_name: 'cryptids'}
         })
         const posts = await Post.findAll({
-            where: {category_id = categoryId}
+            where: {category_id: categoryId}
         })
         console.log(posts)
         // find all posts with that category id
