@@ -1,11 +1,20 @@
 <div class="col-md-6 project-list">
-    <h3>{{category}} Reports</h3>
+    <h3>{{categoryName}} Reports</h3>
 
     {{#each posts as |post|}}
     <div class="row mb-2">
         <div class="col-md-8">
             {{!-- link user id and username --}}
-            {{post}}
+            <div class="text-center">
+                <h2>{{report}}</h2>
+                <p>{{description}}</p>
+                <p>{{location}}</p>
+                <p>Created by {{user.username}} on {{format_date timeFiled}}</p>
+                <p>
+                    <button class="btn btn-primary">Create Report</button>
+                </p>
+            </div>
+
         </div>
         {{!-- include check for if user's post before showing DELETE button --}}
         <div class="col-md-4">
