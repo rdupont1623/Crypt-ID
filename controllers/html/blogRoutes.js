@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         });
 
         // Serialize data so the template can read it
-        const posts = postData.map((post) => Post.get({ plain: true }));
+        const posts = postData.map((post) => post.get({ plain: true }));
 
         // Pass serialized data and session flag into template
         res.render('blog', {
@@ -42,10 +42,10 @@ router.get('/:category', async (req, res) => {
         
         // return item name and id
         // (these might not get used) 
-        const category_name = categoryParsed[0].category_name;
+        const categoryName = categoryParsed[0].category_name;
         const categoryId = categoryParsed[0].id;
         
-        const posts = await Post.findAll({
+        const unformattedPosts = await Post.findAll({
             // find all posts with that category id
             where: { category_id: categoryId },
             include:  [
@@ -54,16 +54,17 @@ router.get('/:category', async (req, res) => {
                     attributes: ['username'],
                 },
             ]
-        })
+        });
 
-        const formattedPosts = posts.map((post) => post.get({ plain: true }));
+        const posts = unformattedPosts.map((post) => post.get({ plain: true }));
 
-        console.log("\x1b[35m%s\x1b[0m", "formatted posts", formattedPosts);
-
+        console.log("\x1b[35m%s\x1b[0m", "formatted posts", posts);
 
         // render the blog page with these posts on it
         res.render('blog', {
-            formattedPosts,
+            categoryName,
+            categoryId,
+            posts,
             logged_in: req.session.logged_in
         })
     }
