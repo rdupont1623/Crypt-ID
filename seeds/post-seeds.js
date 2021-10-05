@@ -35,7 +35,37 @@ const seedPosts = async () => {
       category_id: 1,
       user_id: randomCalc(users),
       tag_id: randomCalc(tags)
-    }
+    },
+    {
+      report: "A bog body was discovered last week in the bog near my gran's house. It looks a lot to me like a classic reptillian. They found it when they were mining for pete in the highlands. Pete the moss, not the person...",
+      description:"tall, lizard-like. long fingernails. ugly",
+      location: "Glasgow",
+      timeSeen: "2021-08-12 12:30",
+      timeFiled: "2021-08-17 15:42:57",
+      category_id: 1,
+      user_id: randomCalc(users),
+      tag_id: randomCalc(tags)
+    },
+    {
+      report: "My family home is being haunted by some douche bag that looks like Popeye. I can hear him talking about spinach every night while we eat dinner. It's disgusting. I've always been more of a kale person myself.",
+      description:"bald, short, with one bum eye. Always holding an unlit pipe in his mouth",
+      location: "New Orleans",
+      timeSeen: null,
+      timeFiled: "2021-01-15 15:42:57",
+      category_id: 2,
+      user_id: randomCalc(users),
+      tag_id: randomCalc(tags)
+    },
+    {
+      report: "I met this guy this one time who said he went camping and Bigfoot shook his tent to keep him up all night. He said it smelled like a swamp and must have been at least 8 ft tall to be able to reach the top of his tent.",
+      description:"tall, hairy, stinky. Ape-like hands",
+      location: "Dallas",
+      timeSeen: "2021-01-12 03:45",
+      timeFiled: "2021-01-15 15:42:57",
+      category_id: 1,
+      user_id: randomCalc(users),
+      tag_id: randomCalc(tags)
+    },
   ];
 
   try {

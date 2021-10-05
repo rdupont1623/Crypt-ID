@@ -41,7 +41,7 @@ router.get('/:category', async (req, res) => {
         const categoryParsed = JSON.parse(stringified);
         
         // return item name and id
-        // these might not get used 
+        // (these might not get used) 
         const category_name = categoryParsed[0].category_name;
         const categoryId = categoryParsed[0].id;
         
@@ -55,12 +55,15 @@ router.get('/:category', async (req, res) => {
                 },
             ]
         })
-        console.log("\x1b[35m%s\x1b[0m", "posts", posts[0].dataValues);
+
+        const formattedPosts = posts.map((post) => post.get({ plain: true }));
+
+        console.log("\x1b[35m%s\x1b[0m", "formatted posts", formattedPosts);
 
 
         // render the blog page with these posts on it
         res.render('blog', {
-            posts,
+            formattedPosts,
             logged_in: req.session.logged_in
         })
     }
