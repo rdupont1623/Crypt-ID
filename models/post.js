@@ -18,6 +18,9 @@ Post.init(
     report: {
       type: DataTypes.TEXT,
     },
+    description: {
+      type: DataTypes.TEXT,
+    },
     location: {
       type: DataTypes.STRING,
     },
@@ -31,6 +34,10 @@ Post.init(
     },
     category_id:  {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'categories',
+        key: 'id',
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
