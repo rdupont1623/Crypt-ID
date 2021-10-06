@@ -21,12 +21,12 @@ paranormalButton.addEventListener("click", () => {
     getData("paranormal")
 });
 
-// otherButton.addEventListener("click", () => {
-//     getData("other")
-// });
+otherButton.addEventListener("click", () => {
+    getData("other")
+});
 
 reportSightingButton.addEventListener("click", () => {
-
+document.location.replace("/create")
 });
 
 
