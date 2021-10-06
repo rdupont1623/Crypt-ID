@@ -11,16 +11,16 @@
 
     <form class="form new-sighting-form">
       <div class="form-group">
-        <label for="sighting-name">Location of sighting</label>
-        <input class="form-input" type="text" id="sighting-name" name="sighting-name" />
+        <label for="sighting-location">Location of sighting</label>
+        <input class="form-input" type="text" id="sighting-location" name="sighting-name" />
       </div>
       <div class="form-group">
-        <label for="sighting-desc">Evidence</label>
-        <textarea class="form-input" id="sighting-evidence" name="sighting-evidence"></textarea>
+        <label for="sighting-report">Report</label>
+        <textarea class="form-input" id="sighting-report" name="sighting-report"></textarea>
       </div>
           <div class="form-group">
-        <label for="sighting-loc">Description of cryptid</label>
-        <textarea class="form-input" id="sighting-desc" name="sighting-desc"></textarea>
+        <label for="sighting-description">Description of cryptid</label>
+        <textarea class="form-input" id="sighting-desc" name="sighting-description"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Report</button>
@@ -30,12 +30,12 @@
 
   {{#if posts.length}}
   <div class="col-md-6 post-list">
-    <h3>Current Posts</h3>
+    <h3>Current Report</h3>
 
     {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+        <h4><a href="/post/{{post.id}}">{{report}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
