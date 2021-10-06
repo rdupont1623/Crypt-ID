@@ -2,13 +2,13 @@ const { Category } = require('../models');
 
 const categoryData = [
     {
-        category_name: "cryptids"
+        category_name: "Cryptid"
     },
     {
-        category_name: "paranormal"
+        category_name: "Paranormal"
     },
     {
-        category_name: "ufo"
+        category_name: "UFO"
     },
     {
         category_name: "other/random"
