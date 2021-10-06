@@ -1,14 +1,14 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#sighting-name').value.trim();
-  const evidence = document.querySelector('#evidence').value.trim();
+  const location = document.querySelector('#sighting-location').value.trim();
+  const report = document.querySelector('#sighting-report').value.trim();
   const description = document.querySelector('#sighting-desc').value.trim();
 
-  if (name && evidence && description) {
+  if (location && report && description) {
     const response = await fetch(`/api/post`, {
       method: 'POST',
-      body: JSON.stringify({ name, evidence, description }),
+      body: JSON.stringify({ location, report, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -43,5 +43,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.report-list')
+  .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
