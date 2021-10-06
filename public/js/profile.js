@@ -1,14 +1,16 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const location = document.querySelector('#sighting-location').value.trim();
+  
   const report = document.querySelector('#sighting-report').value.trim();
-  const description = document.querySelector('#sighting-desc').value.trim();
+  const description = document.querySelector('#sighting-description').value.trim();
+  const location = document.querySelector('#sighting-location').value.trim();
+  const timeSeen = document.querySelector('#sighting-time').value.trim();
 
-  if (location && report && description) {
+  if (location && report && description && timeSeen) {
     const response = await fetch(`/api/post`, {
       method: 'POST',
-      body: JSON.stringify({ location, report, description }),
+      body: JSON.stringify({ report, description, location, timeSeen}),
       headers: {
         'Content-Type': 'application/json',
       },
