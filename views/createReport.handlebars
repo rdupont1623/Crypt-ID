@@ -11,17 +11,22 @@
 
     <form class="form new-sighting-form">
       <div class="form-group">
+        <label for="sighting-report">Report</label>
+        <textarea class="form-input" id="sighting-report" name="sighting-report" required></textarea>
+      </div>
+      </div class="form-group">
+        <label for="sighting-description">Description of cryptid</label>
+        <textarea class="form-input" id="sighting-description" name="sighting-description" required></textarea>
+      </div>
+      </div class="form-group">
         <label for="sighting-location">Location of sighting</label>
-        <input class="form-input" type="text" id="sighting-location" name="sighting-name" />
+        <input class="form-input" type="text" id="sighting-location" name="sighting-name" required/>
       </div>
       <div class="form-group">
-        <label for="sighting-report">Report</label>
-        <textarea class="form-input" id="sighting-report" name="sighting-report"></textarea>
+        <label for="sighting-time">Time Seen</label>
+        <textarea class="form-input" id="sighting-time" name="sighting-time" placeholder="year-month-date hour:minute" required></textarea>
       </div>
-          <div class="form-group">
-        <label for="sighting-description">Description of cryptid</label>
-        <textarea class="form-input" id="sighting-desc" name="sighting-description"></textarea>
-      </div>
+      
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Report</button>
       </div>

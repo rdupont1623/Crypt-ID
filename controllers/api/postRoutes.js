@@ -35,7 +35,7 @@ router.get('/:id', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const {location, report, description} = req.body
-    const newPost = await Post.create({location, report, description});
+    const newPost = await Post.create({report, description, location, timeSeen});
       
       req.session.user_id,
  
