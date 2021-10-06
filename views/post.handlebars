@@ -1,9 +1,12 @@
 <div class="text-center">
-  <h2>report {{report}}</h2>
-  <p>description {{description}}</p>
-  <p>location {{location}}</p>
-  <p>Created by {{user.username}} on {{format_date timeFiled}}</p>
+  <h2>{{post.description}}...</h2>
+  <p>{{post.report}}</p>
+  <p>{{post.location}}</p>
+  <p>Created on: {{post.timeFiled}}</p>
   <p>
-    <button class="btn btn-primary">Create Report</button>
+    {{!-- by {{user.username}}  --}}
+    {{#if displayDeleteButton}}
+    <button class="btn btn-primary">Delete Report</button>
+    {{/if}}
   </p>
 </div>
