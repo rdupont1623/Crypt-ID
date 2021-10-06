@@ -8,14 +8,14 @@ const newFormHandler = async (event) => {
   const timeSeen = document.querySelector('#sighting-time').value.trim();
 
   if (location && report && description && timeSeen) {
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ report, description, location, timeSeen}),
+      body: JSON.stringify({ report, description, location, timeSeen, }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+    
     if (response.ok) {
       document.location.replace('/profile');
     } else {
@@ -28,7 +28,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/post/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
 
