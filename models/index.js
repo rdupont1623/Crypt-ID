@@ -13,7 +13,7 @@ Category.hasMany(Post, { as: "posts" });
 
 Post.belongsTo(Category, {
   foreignKey: 'category_id',
-  as: 'category'
+  // as: 'category'
 });
 
 Post.belongsTo(User, {

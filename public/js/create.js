@@ -1,19 +1,23 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
-  
-  const report = document.querySelector('#sighting-report').value.trim();
-  const description = document.querySelector('#sighting-description').value.trim();
-  const location = document.querySelector('#sighting-location').value.trim();
-  const timeSeen = document.querySelector('#sighting-time').value.trim();
-
-  if (location && report && description && timeSeen) {
+const form = $('.new-sighting-form').serialize()
+console.log(form)
+  const data = new FormData(document.getElementById('sighting'))
+  const report = $('#sighting-report').val().trim();
+  const description = $('#sighting-description').val().trim();
+  const location = $('#sighting-location').val().trim();
+  const timeSeen = $('#sighting-time').val().trim();
+  // const category = $('#category').find(":selected").val().trim();
+  const category = data.get("category")
+  console.log(category)
+  if (location && report && description && timeSeen && category) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ report, description, location, timeSeen, }),
+      body: JSON.stringify({ report, description, location, timeSeen, category }),
       headers: {
         'Content-Type': 'application/json',
       },
+      // body:new FormData(document.getElementById('sighting-report'))
     });
     
     if (response.ok) {

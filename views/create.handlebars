@@ -9,30 +9,37 @@
     <h3>Report a sighting</h3>
     <p>be sure to use our search feature to see if other have had a similar experience</p>
 
-    <form class="form new-sighting-form">
+    <form class="form new-sighting-form" id="sighting">
       <div class="form-group">
         <label for="sighting-report">Report</label>
         <textarea class="form-input" id="sighting-report" name="sighting-report" required></textarea>
       </div>
-  </div class="form-group">
-  <label for="sighting-description">Description of cryptid</label>
-  <textarea class="form-input" id="sighting-description" name="sighting-description" required></textarea>
-</div>
-</div class="form-group">
-<label for="sighting-location">Location of sighting</label>
-<input class="form-input" type="text" id="sighting-location" name="sighting-name" required />
-</div>
-<div class="form-group">
-  <label for="sighting-time">Time Seen</label>
-  <textarea class="form-input" id="sighting-time" name="sighting-time" placeholder="year-month-date hour:minute"
-    required></textarea>
-</div>
-
-<div class="form-group">
-  <button type="submit" class="btn btn-primary">Report</button>
-</div>
-</form>
-</div>
+      </div class="form-group">
+        <label for="sighting-description">Description of cryptid</label>
+        <textarea class="form-input" id="sighting-description" name="sighting-description" required></textarea>
+      </div>
+      </div class="form-group">
+        <label for="sighting-location">Location of sighting</label>
+        <input class="form-input" type="text" id="sighting-location" name="sighting-name" required />
+      </div>
+      <div class="form-group">
+        <label for="sighting-time">Time Seen</label>
+        <textarea class="form-input" id="sighting-time" name="sighting-time" placeholder="year-month-date hour:minute"required></textarea>
+      </div>
+      <div>
+        <label for="category">Choose a category</label>
+          <select name="category" id="category">
+            <option value="1">Cryptid</option>
+            <option value="2">UFO</option>
+            <option value="3">Paranormal</option>
+            <option value="4">Other</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Report</button>
+      </div>
+    </form>
+  </div>
 
 {{#if posts.length}}
 <div class="col-md-6 post-list">

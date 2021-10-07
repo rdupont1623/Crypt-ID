@@ -36,10 +36,11 @@ router.get('/:category', async (req, res) => {
         });
 
         // for some reason it needs to be stringified and then parsed in order to return the correct info
-        const stringified = JSON.stringify(categoryData);
+        // const stringified = JSON.stringify(categoryData);
 
-        const categoryParsed = JSON.parse(stringified);
-
+        // const categoryParsed = JSON.parse(stringified);
+        const categoryParsed = categoryData.map((cat)=> cat.get({plain:true}))
+        
         // return item name and id
         const categoryName = categoryParsed[0].category_name;
         const categoryId = categoryParsed[0].id;
