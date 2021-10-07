@@ -1,0 +1,77 @@
+/*styling for hero on all pages
+Only having slide in from the bottom 
+on the login page*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+/* Slide in animation for header*/
+@keyframes slide-in-blurred-bottom {
+    0% {
+      -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+#slide-in-blurred-bottom {
+    animation: slide-in-blurred-bottom 4s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    }
+/* Title animation*/
+#title {
+         text-shadow:
+        -1px -1px 0 #2DD785,
+        1px -1px 0 #2DD785,
+        -1px 1px 0 #2DD785,
+        1px 1px 0 #2DD785;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        font-family: 'Inconsolata', 'monospace';
+    };
+
+/* Blinking Effect*/
+@keyframes blink {
+  50% {
+    opacity: 0;
+    }
+  100% {
+    opacity: 1;
+    }
+  }
+
+#inline {
+  padding-right: 20px;
+  display: inline-block;
+  }
+    
+#inline span {
+    background: white;
+    opacity: 0;
+    display: inline-block;
+    animation: blink 1s linear infinite alternate;
+  }
+
+
+/*Hero Coloring*/
+#override-color {
+  background-color: #835f47 !important;
+  }
+    
+
+
+
+
+

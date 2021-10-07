@@ -9,44 +9,55 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
   rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   {{!-- CSS --}}
-  <link rel="stylesheet" href="/css/assets/css.css">
-  {{!-- jQuery --}}
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="./css/assets/style.css">
+<link rel="stylesheet" href="./css/assets/hero.css">
+<link rel="stylesheet" href="./css/assets/homepage.css">
+
+      {{!-- jQuery --}}
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" 
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header id="top-of-page" class="display-flex justify-space-between align-center p-2">
-    <img src="../../public/images/logo.jpeg" alt="cryptid logo" width="100" height= "100" >
-      <h1>
-        <a href="/" class= "app-top">Crypt-ID</a>
-      </h1>
-      <nav>
+<body id="page-style">
+  <!--Cryp-ID Heading -fade in and logo-->
+  <section class="text-white" id="override-color">
+  <section class="px-5 pt-3 my-5 text-center border-bottom d-flex justify-content-center" id="slide-in-blurred-bottom">
+    <div>
+      <div>
+        <h1 class="display-4 fw-bold text-muted" id="title" >Crypt-ID</h1>
+      </div>
+      <div>
+        <img src="./images/extra small.png" alt="Crypt-ID Logo">
+      </div>
+    </div>
+  </section>
+  </section>
+
+<!-- Logged in Button Toggle in this section-->
+  <section>
+      <nav class="d-flex justify-content-center">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/create">Submit a Report!</a> |
-        <button class="no-button" id="logout">logout</button>
+        <button class="btn btn-primary btn-lg" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
         {{/if}}
       </nav>
-    </header>
-    <main class="container container-fluid mt-5">
+    </section>
+  <hr>
+
       <!-- Render the sub layout -->
       {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
 </html>
 
 {{!-- sprinkles: add sidebar for search and trending --}}

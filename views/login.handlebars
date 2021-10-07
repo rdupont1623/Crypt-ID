@@ -1,43 +1,45 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email</label>
+<hr>
+<section class="p-3">
+<section class="container-lg bd-highlight d-flex flex-column">
+  <div>
+    <h1 class="font-monospace" id="inline">Login<span id="blink">:</span></h1>
+    <form class="form login-form ">
+      <div class="form-group fw-bold p-3">
+        <label for="email-login p-3" >Email</label>
         <input class="form-input" type="text" id="email-login" />
       </div>
-      <div class="form-group">
-        <label for="password-login">Password</label>
+      <div class="form-group fw-bold p-3">
+        <label for="password-login p-3">Password</label>
         <input class="form-input" type="password" id="password-login" />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Login</button>
+      <div class="form-group p-3">
+        <button class=" font-monospace btn btn-primary" type="submit">Login</button>
       </div>
     </form>
   </div>
-  
-  <div class="col-md-6">
-    <h2>Signup</h2>
+</section>
 
+<section class="container-lg bd-highlight d-flex flex-column">
+  <div class="">
+    <h1 class="font-monospace pt-5" id="inline">Signup<span id="blink">:</span></h1>
     <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username</label>
+      <div class="form-group fw-bold p-3">
+        <label for="username-signup p-3">Username</label>
         <input class="form-input" type="text" id="username-signup" required/>
       </div>
-      <div class="form-group">
-        <label for="email-signup">Email</label>
+      <div class="form-group fw-bold p-3">
+        <label for="email-signup p-3">Email</label>
         <input class="form-input" type="text" id="email-signup" required/>
       </div>
-      <div class="form-group">
-        <label for="password-signup">Password (Minimum 8 Character)</label>
+      <div class="form-group fw-bold p-3">
+        <label for="password-signup p-3">Password (Minimum 8 Character)</label>
         <input class="form-input" type="password" id="password-signup" pattern=".*{8,}" minlength="8" required/>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Signup</button>
+      <div class="form-group p-3">
+        <button class="font-monospace btn btn-primary" type="submit">Signup</button>
       </div>
     </form>
   </div>
-</div>
-
+</section>
+</section>
 <script src="./js/login.js"></script>
