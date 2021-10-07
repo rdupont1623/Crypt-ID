@@ -41,12 +41,12 @@
   {{#each posts as |post|}}
   <div class="row mb-2">
     <div class="col-md-8">
-      <h4><a href="/post/{{post.id}}">{{description}}</a></h4>
-      <p>report: {{report}}</p>
+      <h4><a href="/post/{{id}}">{{description}}</a></h4>
+      <p>Report: {{report}}</p>
       <p>Location: {{location}}</p>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</window></button>
+      <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
     </div>
   </div>
   {{/each}}
