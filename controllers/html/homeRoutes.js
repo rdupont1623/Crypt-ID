@@ -39,9 +39,9 @@ router.get('/create', withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
     
-    console.log(req.session.user_id, 'HEY!!!!!!!!')
+    console.log(req.session.user_id,)
     const user = userData.get({ plain: true });
-    console.log("banana", user)
+    console.log(user)
 
     res.render('create', {
       ...user,
