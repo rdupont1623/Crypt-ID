@@ -9,39 +9,48 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
   rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   {{!-- CSS --}}
-  <link rel="stylesheet" href="/css/assets/css.css">
+  <link rel="stylesheet" href="./css/assets/style.css">
+  <link rel="stylesheet" href="./css/assets/hero.css">
   </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header id="top-of-page" class="display-flex justify-space-between align-center p-2">
-    <img src="../../public/images/logo.jpeg" alt="cryptid logo" width="100" height= "100" >
-      <h1>
-        <a href="/" class= "app-top">Crypt-ID</a>
-      </h1>
-      <nav>
+<body id="page-style">
+  <!--Cryp-ID Heading -fade in and logo-->
+  <section class="text-white" id="override-color">
+  <section class="px-5 pt-3 my-5 text-center border-bottom d-flex justify-content-center" id="slide-in-blurred-bottom">
+    <div>
+      <div>
+        <h1 class="display-4 fw-bold text-muted" id="title" >Crypt-ID</h1>
+      </div>
+      <div>
+        <img src="./images/extra small.png" alt="Crypt-ID Logo">
+      </div>
+    </div>
+  </section>
+  </section>
+
+
+  <section>
+
+  <!---->
+      <nav class="d-flex justify-content-center">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a class="btn btn-primary btn-lg" href="/profile" role="button">Profile</a>
         {{else}}
-        <a href="/login">login</a>
+        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
         {{/if}}
       </nav>
-    </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  </section>
 </body>
 
 </html>

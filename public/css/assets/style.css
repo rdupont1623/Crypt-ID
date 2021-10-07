@@ -1,3 +1,5 @@
+/*styling to be applied to enture project*/
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 };
