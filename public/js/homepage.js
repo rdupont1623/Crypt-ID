@@ -5,11 +5,12 @@ const otherButton = document.getElementById("other-button");
 const reportSightingButton = document.getElementById("report-sighting-button");
 
 function getData(categoryName) {
-    fetch("/api/posts?categoryName="+categoryName);
+    document.location.replace(`/blog/${categoryName}`);
 }
 
 cryptidButton.addEventListener("click", () => {
-    getData("cryptids")
+    getData("cryptid");
+    console.log("hello");
 });
 
 ufoButton.addEventListener("click", () => {
@@ -21,11 +22,11 @@ paranormalButton.addEventListener("click", () => {
 });
 
 otherButton.addEventListener("click", () => {
-    getData("other/randon")
+    getData("other")
 });
 
 reportSightingButton.addEventListener("click", () => {
-
+document.location.replace("/create")
 });
 
 
