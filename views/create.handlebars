@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Report a sighting</h3>
+    <p>be sure to use our search feature to see if other have had a similar experience</p>
+
+    <form class="form new-sighting-form">
+      <div class="form-group">
+        <label for="sighting-report">Report</label>
+        <textarea class="form-input" id="sighting-report" name="sighting-report" required></textarea>
+      </div>
+  </div class="form-group">
+  <label for="sighting-description">Description of cryptid</label>
+  <textarea class="form-input" id="sighting-description" name="sighting-description" required></textarea>
+</div>
+</div class="form-group">
+<label for="sighting-location">Location of sighting</label>
+<input class="form-input" type="text" id="sighting-location" name="sighting-name" required />
+</div>
+<div class="form-group">
+  <label for="sighting-time">Time Seen</label>
+  <textarea class="form-input" id="sighting-time" name="sighting-time" placeholder="year-month-date hour:minute"
+    required></textarea>
+</div>
+
+<div class="form-group">
+  <button type="submit" class="btn btn-primary">Report</button>
+</div>
+</form>
+</div>
+
+{{#if posts.length}}
+<div class="col-md-6 post-list">
+  <h3>Current Report</h3>
+
+  {{#each posts as |post|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4><a href="/post/{{id}}">{{description}}</a></h4>
+      <p>Report: {{report}}</p>
+      <p>Location: {{location}}</p>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+</div>
+
+<script src="./js/create.js"></script>

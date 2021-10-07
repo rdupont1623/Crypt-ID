@@ -2,16 +2,16 @@ const { Category } = require('../models');
 
 const categoryData = [
     {
-        category_name: "Cryptid"
+        category_name: "cryptid"
     },
     {
-        category_name: "Paranormal"
+        category_name: "paranormal"
     },
     {
-        category_name: "UFO"
+        category_name: "ufo"
     },
     {
-        category_name: "other/random"
+        category_name: "other"
     }
 ]
 const seedCategories = () => Category.bulkCreate(categoryData);

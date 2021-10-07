@@ -35,7 +35,8 @@
       <nav class="d-flex justify-content-center">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a class="btn btn-primary btn-lg" href="/profile" role="button">Profile</a>
+        <a href="/create">Submit a Report!</a> |
+        <button class="no-button" id="logout">logout</button>
         {{else}}
         <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
         {{/if}}
@@ -44,7 +45,6 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-  </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
@@ -52,7 +52,6 @@
   {{/if}}
   </section>
 </body>
-
 </html>
 
 {{!-- sprinkles: add sidebar for search and trending --}}

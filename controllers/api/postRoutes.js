@@ -34,10 +34,9 @@ router.get('/:id', withAuth, async (req, res) => {
 // Creating a new post
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newPost = await Post.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+    const {report, description, location, timeSeen} = req.body
+    const newPost = await Post.create({report, description, location, timeSeen, user_id: req.session.user_id});
+ 
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
@@ -69,7 +68,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
     if (!post) {
-      res.status(404).json({ message: 'No project found with this id!' });
+      res.status(404).json({ message: 'No report found with this id!' });
       return;
     }
     res.status(200).json(post);

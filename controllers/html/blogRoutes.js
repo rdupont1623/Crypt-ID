@@ -34,21 +34,20 @@ router.get('/:category', async (req, res) => {
         const categoryData = await Category.findAll({
             where: { category_name: req.params.category }
         });
-        
+
         // for some reason it needs to be stringified and then parsed in order to return the correct info
         const stringified = JSON.stringify(categoryData);
-        
+
         const categoryParsed = JSON.parse(stringified);
-        
+
         // return item name and id
-        // (these might not get used) 
         const categoryName = categoryParsed[0].category_name;
         const categoryId = categoryParsed[0].id;
-        
+
         const unformattedPosts = await Post.findAll({
             // find all posts with that category id
             where: { category_id: categoryId },
-            include:  [
+            include: [
                 {
                     model: User,
                     attributes: ['username'],
@@ -57,8 +56,6 @@ router.get('/:category', async (req, res) => {
         });
 
         const posts = unformattedPosts.map((post) => post.get({ plain: true }));
-
-        console.log("\x1b[35m%s\x1b[0m", "formatted posts", posts);
 
         // render the blog page with these posts on it
         res.render('blog', {
@@ -72,5 +69,41 @@ router.get('/:category', async (req, res) => {
         res.status(500).json(err)
     }
 });
+
+router.get('/post/:id', async (req, res) => {
+    try {
+
+        const parsedId = parseInt(req.params.id);
+        // get the correct post by id
+        const postData = await Post.findByPk(parsedId);
+        const stringified = JSON.stringify(postData);
+        const parsed = JSON.parse(stringified);
+        // const post = parsed.map((post) => post.get({ plain: true }));
+
+        const displayDeleteButton = () => {
+            const currentUser = req.session.user_id;
+            const postUser = postData.user_id;
+
+            // console.log("\x1b[35m%s\x1b[0m", currentUser)
+            if (currentUser === postUser) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        res.render('post', {
+            displayDeleteButton,
+            // pass in user object
+            post: parsed,
+            logged_in: req.session.logged_in
+        })
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;

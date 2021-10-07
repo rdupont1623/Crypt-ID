@@ -6,23 +6,19 @@
         <div class="col-md-8">
             {{!-- link user id and username --}}
             <div class="text-center">
-                <h2>{{report}}</h2>
-                <p>{{description}}</p>
-                <p>{{location}}</p>
+                <h2><a href="/blog/post/{{id}}">{{description}}</a></h2>
+                <p>Report: {{report}}</p>
+                <p>Location: {{location}}</p>
+                {{!-- <p>Date Seen: {{format_date timeSeen}}</p> --}}
                 <p>Created by {{user.username}} on {{format_date timeFiled}}</p>
-                <p>
-                    <button class="btn btn-primary">Create Report</button>
-                </p>
             </div>
 
         </div>
-        {{!-- include check for if user's post before showing DELETE button --}}
-        <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-        </div>
+        
     </div>
     {{/each}}
 </div>
 
 
-<script src="./js/blog.js"></script>
+{{!--
+<script src="./js/blog.js"></script> --}}

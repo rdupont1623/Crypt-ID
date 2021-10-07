@@ -66,6 +66,16 @@ const seedPosts = async () => {
       user_id: randomCalc(users),
       tag_id: randomCalc(tags)
     },
+    {
+      report: "not sure if this is the right spot to post this, but there's something weird with my bootcamp instructors. One of them is constantly mountain biking and the other one is just named 'Bobby'. That's weird, right?",
+      description:"web developers. it's terrible.",
+      location: "University of New Hampshire",
+      timeSeen: null,
+      timeFiled: "2021-09-06 19:20",
+      category_id: 4,
+      user_id: randomCalc(users),
+      tag_id: randomCalc(tags)
+    },
   ];
 
   try {
