@@ -41,11 +41,11 @@ router.get('/create', withAuth, async (req, res) => {
     
     console.log(req.session.user_id, 'HEY!!!!!!!!')
     const user = userData.get({ plain: true });
+    console.log("banana", user)
 
     res.render('create', {
       ...user,
       logged_in: true,
-      posts:[]
     });
   } catch (err) {
     res.status(500).json(err);
