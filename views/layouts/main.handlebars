@@ -6,59 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypt-ID</title>
   {{!-- Bootstrap --}}
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
-  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   {{!-- CSS --}}
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/assets/hero.css">
-<link rel="stylesheet" href="./css/assets/homepage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/assets/hero.css">
+  <link rel="stylesheet" href="./css/assets/homepage.css">
 
-      {{!-- jQuery --}}
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" 
-  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-  </head>
+  {{!-- jQuery --}}
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+</head>
 
 <body id="page-style">
   <!--Cryp-ID Heading -fade in and logo-->
   <section class="text-white" id="override-color">
-  <section class="px-5 pt-3 my-5 text-center border-bottom d-flex justify-content-center" id="slide-in-blurred-bottom">
-    <div>
+    <section class="px-5 pt-3 my-5 text-center border-bottom d-flex justify-content-center"
+      id="slide-in-blurred-bottom">
       <div>
-        <h1 class="display-4 fw-bold text-muted" id="title" >Crypt-ID</h1>
+        <div>
+          <h1 class="display-4 fw-bold text-muted" id="title">Crypt-ID</h1>
+        </div>
+        <div>
+          <a href="/">
+            <img src="./images/extra small.png" alt="Crypt-ID Logo">
+          </a>
+        </div>
       </div>
-      <div>
-        <a href="/">
-        <img src="./images/extra small.png" alt="Crypt-ID Logo">
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
   </section>
 
-<!-- Logged in Button Toggle in this section-->
+  <!-- Logged in Button Toggle in this section-->
   <section>
-      <nav class="d-flex justify-content-center">
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/create">Submit a Report!</a> |
-        <button class="btn btn-primary btn-lg" id="logout">logout</button>
-        {{else}}
-        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
-        {{/if}}
-      </nav>
-    </section>
+    <nav class="d-flex justify-content-center">
+      <!-- Conditionally render login or logout links -->
+      {{#if logged_in}}
+      <a href="/create">Submit a Report!</a> |
+      <button class="btn btn-primary btn-lg" id="logout">logout</button>
+      {{else}}
+      <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+      {{/if}}
+    </nav>
+  </section>
   <hr>
 
-      <!-- Render the sub layout -->
-      {{{ body }}}
+  <!-- Render the sub layout -->
+  {{{ body }}}
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+
 </html>
 
 {{!-- sprinkles: add sidebar for search and trending --}}
