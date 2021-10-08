@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the create page
-      document.location.replace('/create');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
