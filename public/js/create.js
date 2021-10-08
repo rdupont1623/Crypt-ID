@@ -1,19 +1,17 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-const form = $('.new-sighting-form').serialize()
-console.log(form)
+  const form = $('.new-sighting-form').serialize()
   const data = new FormData(document.getElementById('sighting'))
   const report = $('#sighting-report').val().trim();
   const description = $('#sighting-description').val().trim();
   const location = $('#sighting-location').val().trim();
   const timeSeen = $('#sighting-time').val().trim();
   // const category = $('#category').find(":selected").val().trim();
-  const category = data.get("category")
-  console.log(category)
-  if (location && report && description && timeSeen && category) {
+  const category_id = data.get("category");
+  if (location && report && description && timeSeen && category_id) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ report, description, location, timeSeen, category }),
+      body: JSON.stringify({ report, description, location, timeSeen, category_id }),
       headers: {
         'Content-Type': 'application/json',
       },
