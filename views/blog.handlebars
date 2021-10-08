@@ -1,24 +1,23 @@
 <div class="col-md-6 project-list">
     <h3>{{categoryName}} Reports</h3>
 
-    {{#each posts as |post|}}
-    <div class="row mb-2">
-        <div class="col-md-8">
-            {{!-- link user id and username --}}
-            <div class="text-center">
-                <h2><a href="/blog/post/{{id}}">{{description}}</a></h2>
-                <p>Report: {{report}}</p>
-                <p>Location: {{location}}</p>
-                {{!-- <p>Date Seen: {{format_date timeSeen}}</p> --}}
-                <p>Created by {{user.username}} on {{format_date timeFiled}}</p>
-            </div>
-
-        </div>
-        
-    </div>
-    {{/each}}
+    
+        {{#each posts as |post|}}
+<section>
+<div class="card pt-4">
+  <div class="card-header text-center">
+    Location: {{location}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Report: {{report}}</h5>
+    <p class="card-text">See the Full Report Here: <a href="/blog/post/{{id}}">{{description}}</a></p>
+    <hr>
+    <div id="inline">Created by {{user.username}} on {{format_date timeFiled}}</div>
+    <p>Date Seen: {{format_date timeSeen}}</p>
+  </div>
 </div>
-
+</section>
+        {{/each}}
 
 {{!--
 <script src="./js/blog.js"></script> --}}

@@ -1,23 +1,12 @@
-<div class="text-center">
-  <h2>{{post.description}}...</h2>
-  <p>{{post.report}}</p>
+<div class="card pt-4">
+  <h2 class="p-4">{{post.description}}...</h2>
+  <p class="p-1">{{post.report}}</p>
   <p>{{post.location}}</p>
   <p>Created on: {{post.timeFiled}}</p>
-  
-  <p>
+  <p class="pb-4">
     {{#if displayDeleteButton}}
     <button class="btn btn-primary">Delete Report</button>
     {{/if}}
   </p>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
