@@ -29,7 +29,7 @@
         <div>
           <h1 class="display-4 fw-bold text-muted" id="title">Crypt-ID</h1>
         </div>
-        <div>
+        <div class="pb-4">
           <a href="/">
             <img src="/images/extra small.png" alt="Crypt-ID Logo">
           </a>
@@ -39,16 +39,14 @@
   </section>
 
   <!-- Logged in Button Toggle in this section-->
-  <section>
-    <nav class="d-flex justify-content-center">
+  <section class="d-flex justify-content-center">
       <!-- Conditionally render login or logout links -->
       {{#if logged_in}}
-      <a href="/create">Submit a Report!</a> |
-      <button class="btn btn-primary btn-lg" id="logout">logout</button>
+      <a class="btn btn-primary btn-lg" href="/create">Submit a Report!</a> |
+      <a class="btn btn-primary btn-lg" id="logout">logout</a>
       {{else}}
       <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
       {{/if}}
-    </nav>
   </section>
   <hr>
 

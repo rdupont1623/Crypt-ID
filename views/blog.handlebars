@@ -1,23 +1,20 @@
-<div class="col-md-6 project-list">
-    <h3>{{categoryName}} Reports</h3>
+    <h1 class="text-center pb-4 font-monospace">{{categoryName}} Reports</h1>
 
     {{#each posts as |post|}}
-    <div class="row mb-2">
+    <div class="d-flex px-3 justify-content-center row mb-2">
         <div class="col-md-8">
             {{!-- link user id and username --}}
             <div class="text-center">
-                <h2><a href="/blog/post/{{id}}">{{description}}</a></h2>
+                <h2 class="pb-3"><a href="/blog/post/{{id}}">{{description}}</a></h2>
                 <p>Report: {{report}}</p>
                 <p>Location: {{location}}</p>
                 {{!-- <p>Date Seen: {{format_date timeSeen}}</p> --}}
                 <p>Created by {{user.username}} on {{format_date timeFiled}}</p>
             </div>
-
         </div>
-        
     </div>
+    <hr>
     {{/each}}
-</div>
 
 
 {{!--
