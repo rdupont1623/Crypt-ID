@@ -14,10 +14,9 @@
       This is a blog-style sight to track all paranormal, UFO, and cryptid sightings and events in one place.
 
   ## Installation:
-    * Deployed Url https://git.heroku.com/sleepy-island-20575.git
+    * Deployed Url https://sleepy-island-20575.herokuapp.com/
 
-    * Github Repository https://git.heroku.com/sleepy-island-20575.git
-
+    * Github Repository https://github.com/rdupont1623/Crypt-ID
 
   ## Usage:
       Keep track of paranormal sightings in a judgement-free zone full of other believers! Post, read, and discuss your findings and sightings.
