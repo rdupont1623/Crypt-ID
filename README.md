@@ -1,25 +1,28 @@
-# Crypt---ID
+# Crypt-ID
 
   ## Table of Contents
 
-  * [description](#description)
+  * [Description](#Description)
 
-  * [installation](#installation)
+  * [Installation](#Installation)
 
-  * [usage](#usage)
+  * [Usage](#Usage)
 
-  * [contributing](#contributing)
+  * [Contributing](#Contributing)
 
-  ## description:
-      create and edit posts to report on the latest sightings and theories of cryptids, UFOs, and the paranormal.
+  ## Description:
+      This is a blog-style sight to track all paranormal, UFO, and cryptid sightings and events in one place.
 
-  ## installation:
-      click [here]()to navigate to the site.
+  ## Installation:
+    * Deployed Url https://git.heroku.com/sleepy-island-20575.git
 
-  ## usage:
-      keep track of paranormal sightings in a judgement-free zone full of other believers!
+    * Github Repository https://git.heroku.com/sleepy-island-20575.git
 
-  ## contributing:
+
+  ## Usage:
+      Keep track of paranormal sightings in a judgement-free zone full of other believers! Post, read, and discuss your findings and sightings.
+
+  ## Contributing:
     [Ryan Dupont](https://www.github.com/rdupont1623)
     [Elise LaBonte](https://www.github.com/eliselabonte)
     [Stevanie Kanter](https://www.github.com/stevaniekanter)
