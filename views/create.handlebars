@@ -1,13 +1,12 @@
 <section class="d-flex justify-content-center row">
   <div class="col-auto">
-    <h2 class="pt-4">Welcome, {{username}}!</h2>
+    <h2 class="pt-4 font-monospace">Welcome, {{username}}!</h2>
   </div>
 </section>
 
 <section class="ps-4 pt-5">
-    <h3 class="text-center pb-2">Report a sighting</h3>
+    <h3 class="text-center pb-2 font-monospace">Report a sighting</h3>
     <p class="ps-5">Be sure to use our search feature to see if other have had a similar experience</p>
-
     <form class="d-flex flex-wrap justify-content-evenly form new-sighting-form" id="sighting">
       <div class="p-3 form-group">
         <label for="sighting-report">Report</label>
@@ -41,11 +40,11 @@
   </div>
 
  {{#if posts.length}}
- <div class="col-md-6 post-list">
-  <h3>Current Report</h3>
+ <div class="col post-list">
+  <h3 class="d-flex justify-content-center pb-3">Current Report:</h3>
 
   {{#each posts as |post|}}
-  <div class="mb-2">
+  <div class="d-flex mb-2 px-5">
     <div class="col-md-8">
       <h4><a>{{description}}</a></h4>
       <p>Report: {{report}}</p>
@@ -54,6 +53,8 @@
     <div class="col-md-4">
       <button id= "delete_button" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
     </div>
+  </div>
+  <div class="pb-4">
   </div>
   {{/each}}
  {{/if}}
