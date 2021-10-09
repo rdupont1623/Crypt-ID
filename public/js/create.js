@@ -46,6 +46,9 @@ document
   .querySelector('.new-sighting-form')
   .addEventListener('submit', newFormHandler);
 
+const delBtn = document.getElementById("delete_button");
+if (delBtn) {
 document
   .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
+}
